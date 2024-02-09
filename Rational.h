@@ -1,3 +1,6 @@
+#ifndef _RATIONAL_
+#define _RATIONAL_
+
 #include <iostream>
 
 using namespace std;
@@ -7,11 +10,42 @@ class Rational {
     int denum;
 
 public:
+    Rational();
     Rational(int num1, int num2);
-   
-    Rational& operator += (const Rational& r);
-   
-    Rational operator + (const Rational& r) const;
 
-    friend ostream& operator <<(ostream& out, const Rational& r);
+    // Rational& operator *=(const Rational& r);
+    // Rational operator *(const Rational& r) const;
+    Rational& operator += (const Rational& r);
+    Rational operator + (const Rational& r) const;
+    // Rational& operator -= (const Rational& r);
+    // Rational operator - (const Rational& r) const;
+    // Rational& operator *= (const Rational& r);
+    // Rational operator / (const Rational& r) const;
+    // Rational& operator /= (const Rational& r);
+
+    // operator int () const;
+    // operator double() const;
+
+    // friend ostream& operator <<(ostream& out, const Rational& r);
+
+    int gsd(int num1, int num2);
 };
+
+// ostream& operator <<(ostream& out, const Rational& r)
+// {
+//     return out << '(' << r.num << ")/(" << r.denum << ')';
+// }
+
+// Rational::Rational(){
+//     num = 0;
+//     denum = 1;
+
+// }
+
+// Rational::Rational(int num1, int num2)
+// {
+//     num = num1;
+//     denum = num2;
+// }
+
+#endif

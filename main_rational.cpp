@@ -4,9 +4,10 @@
 using namespace std;
 
 int main() {
-    Rational r(5,6);
-    Rational p;
-    cout << r.gsd(365, 15);
-    // cout << r+r;
+    Rational r(5,365);
+    Rational p(1, 15);
+    cout << r+p << endl;
+    cout << p-r << endl;
+    cout << r*p << endl;
     return 0;
 }

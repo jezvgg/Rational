@@ -13,28 +13,25 @@ public:
     Rational();
     Rational(int num1, int num2);
 
-    // Rational& operator *=(const Rational& r);
-    // Rational operator *(const Rational& r) const;
+    Rational& operator *=(const Rational& r);
+    Rational operator *(const Rational& r) const;
     Rational& operator += (const Rational& r);
     Rational operator + (const Rational& r) const;
-    // Rational& operator -= (const Rational& r);
-    // Rational operator - (const Rational& r) const;
-    // Rational& operator *= (const Rational& r);
+    Rational& operator -= (const Rational& r);
+    Rational operator - (const Rational& r) const;
     // Rational operator / (const Rational& r) const;
     // Rational& operator /= (const Rational& r);
 
     // operator int () const;
     // operator double() const;
 
-    // friend ostream& operator <<(ostream& out, const Rational& r);
+    friend ostream& operator <<(ostream& out, const Rational& r);
 
-    int gsd(int num1, int num2);
+private:
+    void simple();
+    int lcm(int num1, int num2);
+    int gcd(int num1, int num2);
 };
-
-// ostream& operator <<(ostream& out, const Rational& r)
-// {
-//     return out << '(' << r.num << ")/(" << r.denum << ')';
-// }
 
 // Rational::Rational(){
 //     num = 0;

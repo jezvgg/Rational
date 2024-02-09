@@ -1,13 +1,12 @@
 #include <iostream>
 #include "Rational.h"
+#include "Fraction.h"
 
 using namespace std;
 
 int main() {
-    Rational r(5,365);
-    Rational p(1, 15);
-    cout << r+p << endl;
-    cout << p-r << endl;
-    cout << r*p << endl;
+    Fraction f(Rational(415, 94));
+    f.show();
+    cout << Rational(f);
     return 0;
 }

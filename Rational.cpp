@@ -57,9 +57,33 @@ Rational Rational :: operator * (const Rational& r) const
     return res *= r;
 }
 
+Rational& Rational::operator /= (const Rational& r)
+{
+    num *= r.denum;
+    denum *= r.num;
+    simple();
+    return *this;
+}
+
+Rational Rational :: operator / (const Rational& r) const
+{
+    Rational res(*this);
+    return res /= r;
+}
+
 ostream& operator <<(ostream& out, const Rational& r)
 {
     return out << '(' << r.num << ")/(" << r.denum << ')';
+}
+
+Rational::operator double() const
+{
+    return ((double)num/(double)denum);
+}
+
+Rational::operator int() const
+{
+    return int(double(*this));
 }
 
 int Rational::lcm(int num1, int num2)

@@ -1,5 +1,6 @@
 #include "../Chain/Chain.h"
 #include "Rational.h"
+#include <iostream>
 
 class Fraction
 {
@@ -12,6 +13,8 @@ class Fraction
     operator Rational();
 
     void show();
+
+    friend std::ostream& operator <<(std::ostream& out, Fraction& f);
 
     protected:
     void Fractain(long long num, long long denum);

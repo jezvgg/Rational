@@ -1,5 +1,7 @@
 #include "Fraction.h"
 #include "Rational.h"
+#include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -7,6 +9,11 @@ using namespace std;
 Fraction::Fraction(Rational r)
 {
     Fractain(r.num, r.denum);
+}
+
+Fraction::Fraction(double d)
+{
+    
 }
 
 
@@ -26,19 +33,26 @@ void Fraction::Fractain(long long num, long long denum)
 Fraction::operator Rational()
 {
     long long num = 1;
-    long long denum = (long long)layers.pop();
+    long long denum = layers.pop();
     int spec;
-    while(not layers.isNull())
+    cout << '(' << num << '/' << denum << ')' << endl;
+    while(!layers.isNull())
     {
         spec = denum;
-        denum = num + denum * (long long)layers.pop();
-        num = denum;
+        denum = num + denum * layers.pop();
+        num = spec;
         cout << '(' << num << '/' << denum << ')' << endl;
     }
-    return Rational(num, denum);
+    return Rational(denum, num);
+}
+
+ostream& operator <<(ostream& out, Fraction& f)
+{
+    out << f.layers;
+    return out;
 }
 
 void Fraction::show()
 {
-    cout << layers;
+    cout << layers << endl;
 }

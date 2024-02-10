@@ -13,6 +13,7 @@ Rational::Rational(int num1, int num2)
 {
     num = num1;
     denum = num2;
+    simple();
 }
 
 Rational& Rational::operator += (const Rational& r)

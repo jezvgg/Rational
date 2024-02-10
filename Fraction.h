@@ -1,4 +1,4 @@
-#include "Chain.h"
+#include "../Chain/Chain.h"
 #include "Rational.h"
 
 class Fraction
